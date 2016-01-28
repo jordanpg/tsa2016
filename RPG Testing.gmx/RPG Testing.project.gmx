@@ -42,6 +42,14 @@
         <sprite>sprites\Spr_Window_Base</sprite>
       </sprites>
     </sprites>
+    <sprites name="Enemies">
+      <sprites name="Basic Black Knight">
+        <sprite>sprites\Spr_BK_Dwn</sprite>
+        <sprite>sprites\Spr_BK_Up</sprite>
+        <sprite>sprites\Spr_BK_Rgt</sprite>
+        <sprite>sprites\Spr_BK_Lft</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Environment">
@@ -72,6 +80,11 @@
       <object>objects\GameState</object>
       <objects name="Window">
         <object>objects\Obj_Window_Base</object>
+      </objects>
+    </objects>
+    <objects name="Enemies">
+      <objects name="Basic Dark Knight">
+        <object>objects\Obj_D_Knight</object>
       </objects>
     </objects>
   </objects>
