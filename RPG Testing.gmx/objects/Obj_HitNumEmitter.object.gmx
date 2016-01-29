@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <persistent>0</persistent>
+  <parentName>Obj_EmitterBase</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,16 +26,29 @@
           <argument>
             <kind>1</kind>
             <string>///initialize instance variables
-global.gamespeed = 1.0;
-global.health = 75;
+event_inherited();
 
-switches = ds_map_create();
+type = Obj_HitNumFX;
 
-switches[? "introscene"] = true;
+period = 500; //time in MS between each emission
+
+hspeedMin = -50;
+hspeedMax = 50;
+vspeedMin = -40;
+vspeedMax = -60;
+gravityMin = 100;
+gravityMax = 100;
+fadeMin = 500;
+fadeMax = 500;
+
+amtMin = 0;
+amtMax = 1500;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,49 +65,12 @@ switches[? "introscene"] = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Start Game
-room_goto_next();
+            <string>///Emit and make random amount
+event_inherited();
+
+lastParticle.amount = random_range(amtMin, amtMax);
+lastParticle.image_blend = make_color_hsv(random_range(0, 255), 255, 255);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>initFonts</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

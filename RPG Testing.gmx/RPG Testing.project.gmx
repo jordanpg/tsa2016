@@ -45,6 +45,9 @@
         <sprite>sprites\Spr_Window_L</sprite>
         <sprite>sprites\Spr_Window_Base</sprite>
       </sprites>
+      <sprites name="Font">
+        <sprite>sprites\Spr_Hit_Font</sprite>
+      </sprites>
     </sprites>
     <sprites name="Enemies">
       <sprites name="Basic Black Knight">
@@ -83,8 +86,22 @@
     <scripts name="physics">
       <script>scripts\applyKnockback.gml</script>
     </scripts>
+    <scripts name="init">
+      <script>scripts\initFonts.gml</script>
+    </scripts>
+    <scripts name="combat">
+      <script>scripts\spawnHitnumber.gml</script>
+      <script>scripts\damageTarget.gml</script>
+    </scripts>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
+    <objects name="Effect">
+      <object>objects\Obj_HitNumFX</object>
+      <object>objects\Obj_FXBase</object>
+      <object>objects\Obj_EmitterBase</object>
+      <object>objects\Obj_HitNumEmitter</object>
+    </objects>
     <objects name="Objects">
       <objects name="Nature">
         <objects name="Plants">
@@ -132,6 +149,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Rm_Title_Screen</room>
+    <room>rooms\Rm_Test_3</room>
     <room>rooms\Rm_Test_2</room>
   </rooms>
   <help>

@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set lifetime
+            <string>///initialize instance variables
 lifetime = floor(room_speed * 0.1);
 
 alarm[0] = lifetime;
 
 image_xscale = 1;
 image_yscale = 1;
+
+damage = 250;
+impulse = 500;
 </string>
           </argument>
         </arguments>
@@ -78,11 +81,21 @@ image_yscale = 1;
           <argument>
             <kind>1</kind>
             <string>///do damage to enemy
-var impulse = 500;
+/*
+var dam = damage;
+
+if(random(1) &lt; (1 / 6))
+    dam *= 2;
 
 show_debug_message("hit " + string(other));
 
 applyKnockback(other, impulse);
+other.hp -= dam;
+
+spawnHitnumber(other.x, other.y, dam);
+*/
+
+damageTarget(parent, other, damage, impulse);
 </string>
           </argument>
         </arguments>
