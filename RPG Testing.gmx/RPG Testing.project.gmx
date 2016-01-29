@@ -83,9 +83,9 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
     <scripts name="NPC">
       <script>scripts\interaction.gml</script>
+    </scripts>
     <scripts name="support">
       <script>scripts\repositionTrueCenter.gml</script>
     </scripts>
@@ -100,7 +100,6 @@
       <script>scripts\damageTarget.gml</script>
     </scripts>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Effect">
       <object>objects\Obj_HitNumFX</object>
