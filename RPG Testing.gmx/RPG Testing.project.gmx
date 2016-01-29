@@ -28,6 +28,9 @@
       <sprites name="Mouse">
         <sprite>sprites\Spr_Mouse</sprite>
       </sprites>
+      <sprites name="Health Bar">
+        <sprite>sprites\Spr_Health_Bar</sprite>
+      </sprites>
     </sprites>
     <sprites name="System">
       <sprites name="Window">
@@ -71,6 +74,9 @@
       </objects>
       <objects name="Mouse">
         <object>objects\Obj_Mouse</object>
+      </objects>
+      <objects name="Helath Bar">
+        <object>objects\Obj_Health_Bar</object>
       </objects>
     </objects>
     <objects name="Party">
