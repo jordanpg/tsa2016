@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <persistent>0</persistent>
+  <parentName>Obj_FXBase</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,19 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///initialize instance variables
-global.gamespeed = 1.0;
-global.health = 75;
+event_inherited();
 
-switches = ds_map_create();
+amount = 0; //amount to display
 
-//gold coin quest events (start and finish)
-switches[? "quest_start"] = false;
-switches[? "quest_obj_obtained"] = false;
-switches[? "quest_finished"] = false;
+forceBlend = false;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,49 +53,35 @@ switches[? "quest_finished"] = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Start Game
-room_goto_next();
+            <string>///Draw hit number
+if(amount &gt; global.damageLower)
+{
+    var ind = amount * global.damageUpperIndex / global.damageUpper;
+    
+    if(ind &lt; global.damageUpperIndex)
+    {
+        var lower = floor(ind);
+        var upper = ceil(ind);
+        
+        var col = merge_color(global.damageCol[lower], global.damageCol[upper], ind - lower);
+    }
+    else
+        var col = global.damageCol[global.damageUpperIndex];
+}
+else
+    var col = global.damageCol[0];
+
+if(!forceBlend)
+    draw_set_color(col);
+else
+    draw_set_color(image_blend);
+draw_set_alpha(image_alpha);
+draw_set_font(global.hitFont);
+
+draw_text(x, y, string(amount));
+
+draw_set_alpha(1);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>initFonts</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

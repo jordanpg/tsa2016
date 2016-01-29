@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,19 +26,31 @@
           <argument>
             <kind>1</kind>
             <string>///initialize instance variables
-global.gamespeed = 1.0;
-global.health = 75;
 
-switches = ds_map_create();
+type = noone;
 
-//gold coin quest events (start and finish)
-switches[? "quest_start"] = false;
-switches[? "quest_obj_obtained"] = false;
-switches[? "quest_finished"] = false;
+period = 100; //time in MS between each emission
+
+hspeedMin = 0;
+hspeedMax = 0;
+vspeedMin = 0;
+vspeedMax = 0;
+gravityMin = 0;
+gravityMax = 0;
+gravDirMin = 270;
+gravDirMax = 270;
+lifetimeMin = 0;
+lifetimeMax = 0;
+fadeMin = 0;
+fadeMax = 0;
+
+alarm[0] = room_speed * period / 1000;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,49 +67,24 @@ switches[? "quest_finished"] = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Start Game
-room_goto_next();
+            <string>///Emit an object
+
+if(!object_exists(type))
+    exit;
+
+lastParticle = instance_create(x, y, type);
+with(lastParticle)
+{
+    xspd = random_range(other.hspeedMin, other.hspeedMax);
+    yspd = random_range(other.vspeedMin, other.vspeedMax);
+    grav = random_range(other.gravityMin, other.gravityMax);
+    gravDir = random_range(other.gravDirMin, other.gravDirMax);
+    lifetime = random_range(other.lifetimeMin, other.lifetimeMax);
+    fadeTime = random_range(other.fadeMin, other.fadeMax);
+}
+
+alarm[0] = room_speed * period / 1000;
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>initFonts</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

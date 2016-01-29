@@ -41,6 +41,9 @@ quest_condition_message = "Undefined quest condition";
 quest_complete_message = "undefined quest complete";
 has_quest = false;
 first_interaction = true;
+msg = "Undefined NPC";
+
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
