@@ -80,8 +80,8 @@ depth = phy_position_y * -1;
             <kind>1</kind>
             <string>///Handle input logic
 
-spd = 1;
-anm_spd = .18;
+spd = 2;
+anm_spd = .18 * spd;
 
 if(keyboard_check(vk_anykey)){
     
