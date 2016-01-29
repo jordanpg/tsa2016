@@ -32,6 +32,8 @@ image_speed = 0.0;
 
 //create boolean to tell if interaction with npc is happening
 action = false;
+
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>

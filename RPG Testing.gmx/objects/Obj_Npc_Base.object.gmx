@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///npc create event
 msg = "Undefined NPC";
+
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>

@@ -77,7 +77,12 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
+    <scripts name="support">
+      <script>scripts\repositionTrueCenter.gml</script>
+    </scripts>
+    <scripts name="physics">
+      <script>scripts\applyKnockback.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Objects">

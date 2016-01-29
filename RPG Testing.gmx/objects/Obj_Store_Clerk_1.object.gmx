@@ -28,7 +28,7 @@
             <string>///inherit create event and make a change to some vars
 msg = "I now have custom text";
 
-
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
