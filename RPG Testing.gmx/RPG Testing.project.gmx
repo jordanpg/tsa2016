@@ -51,6 +51,9 @@
       <sprites name="Font">
         <sprite>sprites\Spr_Hit_Font</sprite>
       </sprites>
+      <sprites name="Debug">
+        <sprite>sprites\Spr_DbgBox</sprite>
+      </sprites>
     </sprites>
     <sprites name="Enemies">
       <sprites name="Basic Black Knight">
@@ -88,6 +91,7 @@
     </scripts>
     <scripts name="support">
       <script>scripts\repositionTrueCenter.gml</script>
+      <script>scripts\depthCorrect.gml</script>
     </scripts>
     <scripts name="physics">
       <script>scripts\applyKnockback.gml</script>
@@ -124,6 +128,9 @@
       <objects name="Helath Bar">
         <object>objects\Obj_Health_Bar</object>
       </objects>
+      <objects name="World">
+        <object>objects\Obj_col</object>
+      </objects>
     </objects>
     <objects name="Party">
       <object>objects\Obj_G_Knight_old</object>
@@ -136,6 +143,7 @@
       </objects>
     </objects>
     <objects name="Enemies">
+      <object>objects\Obj_AI_Base</object>
       <objects name="Basic Dark Knight">
         <object>objects\Obj_D_Knight</object>
       </objects>
