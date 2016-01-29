@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///initialize instance variables
 global.gamespeed = 1.0;
+global.health = 75;
 
 switches = ds_map_create();
 

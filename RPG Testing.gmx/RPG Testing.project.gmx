@@ -30,6 +30,7 @@
       </sprites>
       <sprites name="Health Bar">
         <sprite>sprites\Spr_Health_Bar</sprite>
+        <sprite>sprites\Spr_Health_Bar_Decoy</sprite>
       </sprites>
     </sprites>
     <sprites name="System">
