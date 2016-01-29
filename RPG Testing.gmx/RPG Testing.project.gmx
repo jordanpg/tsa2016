@@ -54,6 +54,11 @@
         <sprite>sprites\Spr_BK_Lft</sprite>
       </sprites>
     </sprites>
+    <sprites name="Combat">
+      <sprites name="Hitboxes">
+        <sprite>sprites\Spr_Sword_Slash</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Environment">
@@ -61,6 +66,9 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\script0.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="Objects">
       <objects name="Nature">
@@ -81,6 +89,7 @@
       </objects>
     </objects>
     <objects name="Party">
+      <object>objects\Obj_G_Knight_old</object>
       <object>objects\Obj_G_Knight</object>
     </objects>
     <objects name="System">
@@ -92,6 +101,11 @@
     <objects name="Enemies">
       <objects name="Basic Dark Knight">
         <object>objects\Obj_D_Knight</object>
+      </objects>
+    </objects>
+    <objects name="Combat">
+      <objects name="Hitboxes">
+        <object>objects\Obj_Sword_Slash</object>
       </objects>
     </objects>
   </objects>

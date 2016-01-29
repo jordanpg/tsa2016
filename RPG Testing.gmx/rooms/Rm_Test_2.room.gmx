@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="Obj_G_Knight" x="391" y="174" name="inst_F101D5A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Store_1" x="448" y="160" name="inst_49165547" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Tree_1" x="96" y="128" name="inst_3605468B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Tree_1" x="192" y="96" name="inst_CB92E7F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -69,6 +68,7 @@
     <instance objName="Obj_Mouse" x="352" y="128" name="inst_A3803FD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_D_Knight" x="283" y="162" name="inst_D5262F1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Health_Bar" x="0" y="0" name="inst_ED0E9C13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_G_Knight" x="384" y="192" name="inst_7331A208" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="Bck_Main_Tileset" x="0" y="0" w="32" h="32" xo="32" yo="352" id="10000591" name="inst_AE0E3564" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -8,7 +8,7 @@
   <parentName>Obj_Store</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="4" ename="Obj_G_Knight">
+    <event eventtype="4" ename="Obj_G_Knight_old">
       <action>
         <libid>1</libid>
         <id>603</id>

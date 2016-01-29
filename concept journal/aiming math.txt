@@ -1,0 +1,16 @@
+MELEE ATTACKS
+	mx, my = mouse position
+	angle aim = datan2(my - y, mx - x) - mod
+		(mod is to put resulting angle in line with game maker image_angle property)
+
+	create hitbox object with origin at player and image_angle set to angle aim
+		(design hitbox objects so this works)
+
+RANGED ATTACKS
+	x, y = mouse position
+	angle aim = datan2(my - y, mx - x) - mod
+		(mod is to put resulting angle in line with game maker image_angle property)
+
+	create projectile object from the player's position with image_angle set to angle aim
+		speed x = projectile speed * dcos(angle aim)
+		speed y = projectile speed * dsin(angle aim)
