@@ -88,6 +88,8 @@
   <scripts name="scripts">
     <scripts name="NPC">
       <script>scripts\interaction.gml</script>
+      <script>scripts\initMaps.gml</script>
+      <script>scripts\initOwnMap.gml</script>
     </scripts>
     <scripts name="support">
       <script>scripts\repositionTrueCenter.gml</script>
@@ -142,12 +144,6 @@
         <object>objects\Obj_Window_Base</object>
       </objects>
     </objects>
-    <objects name="Enemies">
-      <object>objects\Obj_AI_Base</object>
-      <objects name="Basic Dark Knight">
-        <object>objects\Obj_D_Knight</object>
-      </objects>
-    </objects>
     <objects name="Combat">
       <objects name="Hitboxes">
         <object>objects\Obj_Sword_Slash</object>
@@ -158,6 +154,12 @@
         <object>objects\Obj_Store_Clerk_1</object>
       </objects>
       <object>objects\Obj_Npc_Base</object>
+      <objects name="Enemies">
+        <object>objects\Obj_AI_Base</object>
+        <objects name="Basic Dark Knight">
+          <object>objects\Obj_D_Knight</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="Quest">
       <objects name="NPC Quest">
