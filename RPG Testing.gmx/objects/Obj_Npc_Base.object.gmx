@@ -26,7 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>///npc create event
-msg = "Undefined NPC";
+//stop animation
+image_speed = 0.0;
+
+//generic npc stuff
+message = "Undefined NPC message";
+
+//store npc stuff
+store_message = "Undefined store message";
+
+//quest npc stuff
+quest_message = "Undefined quest message";
+quest_condition_message = "Undefined quest condition";
+quest_complete_message = "undefined quest complete";
+has_quest = false;
+first_interaction = true;
 </string>
           </argument>
         </arguments>
@@ -71,22 +85,7 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///hero interaction
-
-var dist = point_distance(Obj_G_Knight.phy_position_x, Obj_G_Knight.phy_position_y, x, y);
-
-//debug message for distance
-show_debug_message(string(dist));
-
-//variable for distance needed to interact with an npc
-int_dist = 27;
-
-if(dist &lt; int_dist){
-    if(Obj_G_Knight.action == true){
-        //do interaction
-        show_message(msg);
-    }
-}
+            <string>event_user(1);
 </string>
           </argument>
         </arguments>
@@ -134,6 +133,113 @@ if(dist &lt; int_dist){
             <kind>1</kind>
             <string>///collision with tree 1
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>generic npc code</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Quest npc code</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//check to see if hero is interacting with npc
+if(interaction()){
+    
+    //if it's heros first time interacting with quest npc
+    if(first_interaction == true){
+        //set to false
+        first_interaction = false;
+        //display quest dialog
+        show_message(quest_message);
+        //start quest once you talk to npc
+        GameState.switches[? "quest_start"] = true;
+    }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == false)){
+        show_message(quest_condition_message);
+    }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == true)&amp;&amp; (GameState.switches[? "quest_finished"] == false)){
+        show_message(quest_complete_message);
+        GameState.switches[? "quest_finished"] = true;
+    }else if((GameState.switches[? "quest_finished"] == true)){
+        show_message(quest_complete_message);
+    }
+    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Store Npc Code</string>
           </argument>
         </arguments>
       </action>

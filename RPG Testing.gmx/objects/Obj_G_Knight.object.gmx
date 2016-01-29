@@ -109,6 +109,7 @@ if(keyboard_check(vk_anykey)){
     if(keyboard_check(ord("T"))){
         //interaction
         action = true;
+        show_debug_message("interaction key pressed");
     }
     
 } else {

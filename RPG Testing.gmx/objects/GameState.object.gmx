@@ -31,7 +31,10 @@ global.health = 75;
 
 switches = ds_map_create();
 
-switches[? "introscene"] = true;
+//gold coin quest events (start and finish)
+switches[? "quest_start"] = false;
+switches[? "quest_obj_obtained"] = false;
+switches[? "quest_finished"] = false;
 </string>
           </argument>
         </arguments>

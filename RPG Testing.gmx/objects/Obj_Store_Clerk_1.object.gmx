@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///inherit create event and make a change to some vars
-msg = "I now have custom text";
+event_inherited();
 
-
+quest_message = "I seem to have missplace my gold coin somewhere. Can you help mme find it?";
+quest_condition_message = "Have you found it yet?";
+quest_complete_message = "Thank you so much for finding my coin!!!";
+has_quest = true;
 </string>
           </argument>
         </arguments>

@@ -32,6 +32,9 @@
         <sprite>sprites\Spr_Health_Bar</sprite>
         <sprite>sprites\Spr_Health_Bar_Decoy</sprite>
       </sprites>
+      <sprites name="Quest Items">
+        <sprite>sprites\Spr_Sample_Quest_Item_Gold_Coin</sprite>
+      </sprites>
     </sprites>
     <sprites name="System">
       <sprites name="Window">
@@ -78,6 +81,9 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script0.gml</script>
+    <scripts name="NPC">
+      <script>scripts\interaction.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Objects">
@@ -123,6 +129,13 @@
         <object>objects\Obj_Store_Clerk_1</object>
       </objects>
       <object>objects\Obj_Npc_Base</object>
+    </objects>
+    <objects name="Quest">
+      <objects name="NPC Quest">
+        <objects name="NPC Store Clerk 1">
+          <object>objects\Obj_Gold_Coin</object>
+        </objects>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
