@@ -69,6 +69,7 @@
     <instance objName="Obj_D_Knight" x="283" y="162" name="inst_D5262F1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Health_Bar" x="0" y="0" name="inst_ED0E9C13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_G_Knight" x="384" y="192" name="inst_7331A208" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Store_Clerk_1" x="395" y="142" name="inst_7A71DE0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="Bck_Main_Tileset" x="0" y="0" w="32" h="32" xo="32" yo="352" id="10000591" name="inst_AE0E3564" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

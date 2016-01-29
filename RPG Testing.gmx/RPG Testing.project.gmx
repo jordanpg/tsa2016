@@ -59,6 +59,16 @@
         <sprite>sprites\Spr_Sword_Slash</sprite>
       </sprites>
     </sprites>
+    <sprites name="Npc">
+      <sprites name="Store Clerk">
+        <sprites name="clerk 1">
+          <sprite>sprites\Spr_Store_Clerk_1_Dwn</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_lft</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_Up</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_Rgt</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Environment">
@@ -107,6 +117,12 @@
       <objects name="Hitboxes">
         <object>objects\Obj_Sword_Slash</object>
       </objects>
+    </objects>
+    <objects name="Npcs">
+      <objects name="Store Clerk">
+        <object>objects\Obj_Store_Clerk_1</object>
+      </objects>
+      <object>objects\Obj_Npc_Base</object>
     </objects>
   </objects>
   <rooms name="rooms">
