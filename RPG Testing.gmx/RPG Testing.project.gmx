@@ -32,6 +32,9 @@
         <sprite>sprites\Spr_Health_Bar</sprite>
         <sprite>sprites\Spr_Health_Bar_Decoy</sprite>
       </sprites>
+      <sprites name="Quest Items">
+        <sprite>sprites\Spr_Sample_Quest_Item_Gold_Coin</sprite>
+      </sprites>
     </sprites>
     <sprites name="System">
       <sprites name="Window">
@@ -44,6 +47,12 @@
         <sprite>sprites\Spr_Window_BL</sprite>
         <sprite>sprites\Spr_Window_L</sprite>
         <sprite>sprites\Spr_Window_Base</sprite>
+      </sprites>
+      <sprites name="Font">
+        <sprite>sprites\Spr_Hit_Font</sprite>
+      </sprites>
+      <sprites name="Debug">
+        <sprite>sprites\Spr_DbgBox</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -59,6 +68,16 @@
         <sprite>sprites\Spr_Sword_Slash</sprite>
       </sprites>
     </sprites>
+    <sprites name="Npc">
+      <sprites name="Store Clerk">
+        <sprites name="clerk 1">
+          <sprite>sprites\Spr_Store_Clerk_1_Dwn</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_lft</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_Up</sprite>
+          <sprite>sprites\Spr_Store_Clerk_1_Rgt</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Environment">
@@ -67,9 +86,35 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
+    <scripts name="NPC">
+      <script>scripts\interaction.gml</script>
+      <script>scripts\getMapName.gml</script>
+    </scripts>
+    <scripts name="support">
+      <script>scripts\repositionTrueCenter.gml</script>
+      <script>scripts\depthCorrect.gml</script>
+    </scripts>
+    <scripts name="physics">
+      <script>scripts\applyKnockback.gml</script>
+    </scripts>
+    <scripts name="init">
+      <script>scripts\initFonts.gml</script>
+      <script>scripts\initMaps.gml</script>
+      <script>scripts\initOwnMap.gml</script>
+    </scripts>
+    <scripts name="combat">
+      <script>scripts\spawnHitnumber.gml</script>
+      <script>scripts\damageTarget.gml</script>
+      <script>scripts\execAttack.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="Effect">
+      <object>objects\Obj_HitNumFX</object>
+      <object>objects\Obj_FXBase</object>
+      <object>objects\Obj_EmitterBase</object>
+      <object>objects\Obj_HitNumEmitter</object>
+    </objects>
     <objects name="Objects">
       <objects name="Nature">
         <objects name="Plants">
@@ -87,6 +132,9 @@
       <objects name="Helath Bar">
         <object>objects\Obj_Health_Bar</object>
       </objects>
+      <objects name="World">
+        <object>objects\Obj_col</object>
+      </objects>
     </objects>
     <objects name="Party">
       <object>objects\Obj_G_Knight_old</object>
@@ -98,19 +146,35 @@
         <object>objects\Obj_Window_Base</object>
       </objects>
     </objects>
-    <objects name="Enemies">
-      <objects name="Basic Dark Knight">
-        <object>objects\Obj_D_Knight</object>
-      </objects>
-    </objects>
     <objects name="Combat">
       <objects name="Hitboxes">
         <object>objects\Obj_Sword_Slash</object>
+      </objects>
+      <object>objects\Obj_Damaged_Base</object>
+    </objects>
+    <objects name="Npcs">
+      <objects name="Store Clerk">
+        <object>objects\Obj_Store_Clerk_1</object>
+      </objects>
+      <object>objects\Obj_Npc_Base</object>
+      <objects name="Enemies">
+        <object>objects\Obj_AI_Base</object>
+        <objects name="Basic Dark Knight">
+          <object>objects\Obj_D_Knight</object>
+        </objects>
+      </objects>
+    </objects>
+    <objects name="Quest">
+      <objects name="NPC Quest">
+        <objects name="NPC Store Clerk 1">
+          <object>objects\Obj_Gold_Coin</object>
+        </objects>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Rm_Title_Screen</room>
+    <room>rooms\Rm_Test_3</room>
     <room>rooms\Rm_Test_2</room>
   </rooms>
   <help>

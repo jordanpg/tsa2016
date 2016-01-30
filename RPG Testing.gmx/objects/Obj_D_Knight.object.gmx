@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>Obj_AI_Base</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>///create event
-image_speed = 0;
+event_inherited();
+
+maxHealth = 1000;
+hp = maxHealth;
+
+baseAtk = 0.2;
+
+debugMaps = false;
+debugPaths = true;
+
+chasing = Obj_G_Knight;
+
+spd = 30;
+
+damage = 100;
+knockback = 250;
+
+range = sprite_get_height(Spr_Sword_Slash);
+lastAttack = -1;
+slashTimeout = 100;
 </string>
           </argument>
         </arguments>
@@ -49,14 +68,28 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Depth Correction
-depth = phy_position_y * -1;
+            <string>///Slash at the target when close enough
+event_inherited();
+
+if(dead || !instance_exists(chasing))
+    exit;
+
+if(lastAttack != -1 &amp;&amp; current_time - lastAttack &lt; slashTimeout)
+    exit;
+    
+var dist = point_distance(chasing.x, chasing.y, phy_position_x, phy_position_y);
+
+if(dist &lt;= range)
+{
+    execAttack(id, chasing.x, chasing.y, Obj_Sword_Slash); 
+    lastAttack = current_time;
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_G_Knight_old">
+    <event eventtype="4" ename="Obj_Damaged_Base">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -73,30 +106,13 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///collision with player
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="Obj_Tree_1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///collision with tree 1
+            <string>///Attack player on contact
+exit;
+
+event_inherited();
+
+if(!dead &amp;&amp; other.id == Obj_G_Knight.id)
+    damageTarget(self, other, damage, knockback);
 </string>
           </argument>
         </arguments>
@@ -106,12 +122,12 @@ depth = phy_position_y * -1;
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.100000001490116</PhysicsObjectDensity>
+  <PhysicsObjectDensity>1</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>5</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>0</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>

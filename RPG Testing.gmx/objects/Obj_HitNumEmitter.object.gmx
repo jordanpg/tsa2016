@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Obj_col</parentName>
+  <parentName>Obj_EmitterBase</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,14 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Depth Correction
-depth = y * -1;
+            <string>///initialize instance variables
+event_inherited();
+
+type = Obj_HitNumFX;
+
+period = 500; //time in MS between each emission
+
+hspeedMin = -50;
+hspeedMax = 50;
+vspeedMin = -40;
+vspeedMax = -60;
+gravityMin = 100;
+gravityMax = 100;
+fadeMin = 500;
+fadeMax = 500;
+
+amtMin = 0;
+amtMax = 1500;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_G_Knight">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,7 +65,11 @@ depth = y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///collide player
+            <string>///Emit and make random amount
+event_inherited();
+
+lastParticle.amount = random_range(amtMin, amtMax);
+lastParticle.image_blend = make_color_hsv(random_range(0, 255), 255, 255);
 </string>
           </argument>
         </arguments>
@@ -58,8 +78,8 @@ depth = y * -1;
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0</PhysicsObjectDensity>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>

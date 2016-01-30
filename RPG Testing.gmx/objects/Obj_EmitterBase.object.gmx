@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Obj_col</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,14 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Depth Correction
-depth = y * -1;
+            <string>///initialize instance variables
+
+type = noone;
+
+period = 100; //time in MS between each emission
+
+hspeedMin = 0;
+hspeedMax = 0;
+vspeedMin = 0;
+vspeedMax = 0;
+gravityMin = 0;
+gravityMax = 0;
+gravDirMin = 270;
+gravDirMax = 270;
+lifetimeMin = 0;
+lifetimeMax = 0;
+fadeMin = 0;
+fadeMax = 0;
+
+alarm[0] = room_speed * period / 1000;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_G_Knight">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,7 +67,23 @@ depth = y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///collide player
+            <string>///Emit an object
+
+if(!object_exists(type))
+    exit;
+
+lastParticle = instance_create(x, y, type);
+with(lastParticle)
+{
+    xspd = random_range(other.hspeedMin, other.hspeedMax);
+    yspd = random_range(other.vspeedMin, other.vspeedMax);
+    grav = random_range(other.gravityMin, other.gravityMax);
+    gravDir = random_range(other.gravDirMin, other.gravDirMax);
+    lifetime = random_range(other.lifetimeMin, other.lifetimeMax);
+    fadeTime = random_range(other.fadeMin, other.fadeMax);
+}
+
+alarm[0] = room_speed * period / 1000;
 </string>
           </argument>
         </arguments>
@@ -58,8 +92,8 @@ depth = y * -1;
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0</PhysicsObjectDensity>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>

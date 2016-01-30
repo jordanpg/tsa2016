@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Obj_col</parentName>
+  <parentName>Obj_FXBase</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,14 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Depth Correction
-depth = y * -1;
+            <string>///initialize instance variables
+event_inherited();
+
+amount = 0; //amount to display
+
+forceBlend = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_G_Knight">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,7 +53,34 @@ depth = y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///collide player
+            <string>///Draw hit number
+if(amount &gt; global.damageLower)
+{
+    var ind = amount * global.damageUpperIndex / global.damageUpper;
+    
+    if(ind &lt; global.damageUpperIndex)
+    {
+        var lower = floor(ind);
+        var upper = ceil(ind);
+        
+        var col = merge_color(global.damageCol[lower], global.damageCol[upper], ind - lower);
+    }
+    else
+        var col = global.damageCol[global.damageUpperIndex];
+}
+else
+    var col = global.damageCol[0];
+
+if(!forceBlend)
+    draw_set_color(col);
+else
+    draw_set_color(image_blend);
+draw_set_alpha(image_alpha);
+draw_set_font(global.hitFont);
+
+draw_text(x, y, string(amount));
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
@@ -58,8 +89,8 @@ depth = y * -1;
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0</PhysicsObjectDensity>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
