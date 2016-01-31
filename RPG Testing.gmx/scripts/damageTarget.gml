@@ -40,8 +40,13 @@ if(target.baseDef != 0)
     damage /= target.baseDef;
     
 //critical hit stuff
+var crit = false;
+
 if(random(1) < (1 / 6))
+{
+    crit = true;
     damage *= 2;
+}
 
 if(abs(impulse) > 0)
     applyKnockback(target, impulse);
@@ -51,3 +56,8 @@ if(target.hp < 0)
     target.hp = 0;
 
 spawnHitnumber(target.x, target.y, damage, blend);
+
+if(!crit)
+    playMappedSound("hit", 0, 0);
+else
+    playMappedSound("hit_hard", 0, 0);

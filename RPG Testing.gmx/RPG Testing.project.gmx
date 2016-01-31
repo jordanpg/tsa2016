@@ -4,7 +4,40 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Combat">
+      <sounds name="Magic">
+        <sounds name="Cast">
+          <sound>sound\Snd_magic1</sound>
+          <sound>sound\Snd_magic2</sound>
+          <sound>sound\Snd_magic3</sound>
+        </sounds>
+        <sounds name="Charge">
+          <sound>sound\Snd_charge1</sound>
+          <sound>sound\Snd_charge2</sound>
+          <sound>sound\Snd_charge3</sound>
+        </sounds>
+      </sounds>
+      <sounds name="Hit">
+        <sounds name="Smash">
+          <sound>sound\Snd_smash1</sound>
+          <sound>sound\Snd_smash2</sound>
+          <sound>sound\Snd_smash3</sound>
+        </sounds>
+        <sounds name="Hard">
+          <sound>sound\Snd_hardhit1</sound>
+          <sound>sound\Snd_hardhit2</sound>
+        </sounds>
+        <sounds name="Normal">
+          <sound>sound\Snd_hit1</sound>
+          <sound>sound\Snd_hit2</sound>
+          <sound>sound\Snd_hit3</sound>
+          <sound>sound\Snd_hit4</sound>
+          <sound>sound\Snd_hit5</sound>
+        </sounds>
+      </sounds>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Party">
       <sprites name="Gray Knight">
@@ -93,6 +126,7 @@
     <scripts name="support">
       <script>scripts\repositionTrueCenter.gml</script>
       <script>scripts\depthCorrect.gml</script>
+      <script>scripts\playMappedSound.gml</script>
     </scripts>
     <scripts name="physics">
       <script>scripts\applyKnockback.gml</script>
@@ -101,6 +135,7 @@
       <script>scripts\initFonts.gml</script>
       <script>scripts\initMaps.gml</script>
       <script>scripts\initOwnMap.gml</script>
+      <script>scripts\initSounds.gml</script>
     </scripts>
     <scripts name="combat">
       <script>scripts\spawnHitnumber.gml</script>

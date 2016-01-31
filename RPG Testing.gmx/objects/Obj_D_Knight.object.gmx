@@ -34,7 +34,7 @@ hp = maxHealth;
 baseAtk = 0.2;
 
 debugMaps = false;
-debugPaths = true;
+debugPaths = false;
 
 chasing = Obj_G_Knight;
 
