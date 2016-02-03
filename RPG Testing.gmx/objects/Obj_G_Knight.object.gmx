@@ -269,29 +269,6 @@ execAttack(id, mouse_x, mouse_y, Obj_Sword_Slash);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_AI_Base">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///collide with enemy dark knight
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="Obj_Npc_Base">
       <action>
         <libid>1</libid>
@@ -311,6 +288,28 @@ execAttack(id, mouse_x, mouse_y, Obj_Sword_Slash);
             <kind>1</kind>
             <string>///collide with npc
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Obj_Damaged_Base">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Collide with damaged objects</string>
           </argument>
         </arguments>
       </action>

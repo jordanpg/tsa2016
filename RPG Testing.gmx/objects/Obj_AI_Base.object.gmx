@@ -246,6 +246,8 @@ if(instance_exists(chasing))
             <string>///Move along path (chase AI)
 //var dt = delta_time / 1000000;
 
+image_speed = 0;
+
 if(!path_exists(path) &amp;&amp; instance_exists(chasing))
     exit;
 
@@ -262,7 +264,8 @@ var vy = lengthdir_y(spd, dir);
 
 physics_apply_local_force(phy_position_x, phy_position_y, vx, vy);
     
-    
+image_speed = .18 * (spd / 50);
+
 /*
 var pts = path_get_number(path);
 if(pts &lt;= 0)
@@ -311,6 +314,28 @@ physics_apply_local_force(0, 0, vx * spd, vy * spd);
 show_debug_message("force " + string(vx * spd) + " " + string(vy * spd));
 */
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Obj_Damaged_Base">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Collide with damaged objects</string>
           </argument>
         </arguments>
       </action>
@@ -392,7 +417,7 @@ path_start(path, 0, path_action_stop, true);
 
 lastPath = current_time;
 
-show_debug_message("new path " + string(path_get_length(path)));
+//show_debug_message("new path " + string(path_get_length(path)));
 </string>
           </argument>
         </arguments>
