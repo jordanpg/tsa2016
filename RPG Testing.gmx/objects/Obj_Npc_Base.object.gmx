@@ -269,7 +269,7 @@ if(interaction()){
 draw_self();
 
 //debug part for area interaction circle
-/*
+
 
 //npc radious of effect
 radious = 26;
@@ -280,7 +280,7 @@ draw_set_color(c_black);
 
 //debug circle
 draw_circle(x, y-12, radious, 3);
-*/
+
 </string>
           </argument>
         </arguments>

@@ -106,14 +106,19 @@ if(keyboard_check(vk_anykey))
         mv_x += 1;
     if(keyboard_check(ord("A")))
         mv_x -= 1;
-    
-    //npc interaction
-    if(keyboard_check(ord("T")))
-    {
-        //interaction
-        action = true;
-        show_debug_message("interaction key pressed");
-    }
+}
+
+
+if(keyboard_check_pressed(ord("T")))
+{
+    //interaction
+    action = true;
+    show_debug_message("interaction key pressed");
+}
+else
+{
+    //Poopoo
+    action = false;
 }
 
 moving = (point_distance(0, 0, mv_x, mv_y) &gt; 0);
@@ -223,9 +228,6 @@ if(moving)
 } else {
     //set character speed to 0 sense character isnt moving
     image_speed = 0;
-    
-    //set action to flase since interaction key isnt pressed anymore
-    action = false;
 }
 </string>
           </argument>
