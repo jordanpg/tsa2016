@@ -89,7 +89,6 @@
     <instance objName="Obj_col" x="64" y="128" name="inst_2A51C04D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_col" x="64" y="160" name="inst_D36EDAAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_col" x="64" y="192" name="inst_C363842F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_col" x="64" y="224" name="inst_3487195C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="Bck_Main_Tileset" x="0" y="0" w="32" h="32" xo="32" yo="352" id="10000591" name="inst_AE0E3564" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

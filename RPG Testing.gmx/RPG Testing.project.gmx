@@ -70,6 +70,7 @@
       </sprites>
       <sprites name="Helpers">
         <sprite>sprites\Spr_Col_Box</sprite>
+        <sprite>sprites\Spr_Col_Box_Off</sprite>
       </sprites>
     </sprites>
     <sprites name="System">
@@ -145,7 +146,15 @@
       <script>scripts\damageTarget.gml</script>
       <script>scripts\execAttack.gml</script>
     </scripts>
+    <scripts name="Window">
+      <script>scripts\Scr_text.gml</script>
+    </scripts>
   </scripts>
+  <fonts name="fonts">
+    <fonts name="Window Text">
+      <font>fonts\Fnt_Window_Text</font>
+    </fonts>
+  </fonts>
   <objects name="objects">
     <objects name="Effect">
       <object>objects\Obj_HitNumFX</object>
