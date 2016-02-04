@@ -131,6 +131,8 @@
       <script>scripts\repositionTrueCenter.gml</script>
       <script>scripts\depthCorrect.gml</script>
       <script>scripts\playMappedSound.gml</script>
+      <script>scripts\Scr_Unpause.gml</script>
+      <script>scripts\Scr_Pause.gml</script>
     </scripts>
     <scripts name="physics">
       <script>scripts\applyKnockback.gml</script>
@@ -148,6 +150,9 @@
     </scripts>
     <scripts name="Window">
       <script>scripts\Scr_text.gml</script>
+    </scripts>
+    <scripts name="Quest">
+      <script>scripts\Scr_Coin_Quest.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -189,6 +194,7 @@
     </objects>
     <objects name="System">
       <object>objects\GameState</object>
+      <object>objects\Obj_Has_Phy</object>
       <objects name="Window">
         <object>objects\Obj_Window_Base</object>
       </objects>

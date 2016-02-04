@@ -32,6 +32,7 @@ image_speed = 0.0;
 //create variable for determining type of npc
 // 0 generic; 1 quest; 2 store
 type = 0;
+end_message = "#Press space to continue..."
 
 //generic npc stuff
 message = "Undefined NPC message";
@@ -206,24 +207,7 @@ depth = phy_position_y * -1;
             <string>//check to see if hero is interacting with npc
 if(interaction()){
     
-    //if it's heros first time interacting with quest npc
-    if(first_interaction == true){
-        //set to false
-        first_interaction = false;
-        //display quest dialog
-        show_message(quest_message);
-        //start quest once you talk to npc
-        GameState.switches[? "quest_start"] = true;
-        //activate coin
-        instance_activate_object(Obj_Gold_Coin);
-    }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == false)){
-        show_message(quest_condition_message);
-    }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == true)&amp;&amp; (GameState.switches[? "quest_finished"] == false)){
-        show_message(quest_complete_message);
-        GameState.switches[? "quest_finished"] = true;
-    }else if((GameState.switches[? "quest_finished"] == true)){
-        show_message(quest_complete_message);
-    }
+    Scr_Coin_Quest();
     
 }
 </string>
