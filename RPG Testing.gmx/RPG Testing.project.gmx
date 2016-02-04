@@ -68,6 +68,9 @@
       <sprites name="Quest Items">
         <sprite>sprites\Spr_Sample_Quest_Item_Gold_Coin</sprite>
       </sprites>
+      <sprites name="Helpers">
+        <sprite>sprites\Spr_Col_Box</sprite>
+      </sprites>
     </sprites>
     <sprites name="System">
       <sprites name="Window">
@@ -167,7 +170,7 @@
       <objects name="Helath Bar">
         <object>objects\Obj_Health_Bar</object>
       </objects>
-      <objects name="World">
+      <objects name="Helper">
         <object>objects\Obj_col</object>
       </objects>
     </objects>
