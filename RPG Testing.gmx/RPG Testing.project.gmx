@@ -194,7 +194,6 @@
     </objects>
     <objects name="System">
       <object>objects\GameState</object>
-      <object>objects\Obj_Has_Phy</object>
       <objects name="Window">
         <object>objects\Obj_Window_Base</object>
       </objects>

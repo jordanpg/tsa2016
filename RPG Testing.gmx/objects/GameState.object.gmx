@@ -218,6 +218,10 @@ if(keyboard_check_pressed(ord("P"))){
         with(Obj_Npc_Base){
             phy_active = true;
         }
+        with(Obj_Sword_Slash){
+            instance_activate_object(Obj_Sword_Slash);
+            phy_active = true;
+        }
         pause = false;
     }else{
         
@@ -228,6 +232,10 @@ if(keyboard_check_pressed(ord("P"))){
             phy_active = false;
         }
         with(Obj_Npc_Base){
+            phy_active = false;
+        }
+        with(Obj_Sword_Slash){
+            instance_deactivate_object(Obj_Sword_Slash);
             phy_active = false;
         }
         pause = true;    
