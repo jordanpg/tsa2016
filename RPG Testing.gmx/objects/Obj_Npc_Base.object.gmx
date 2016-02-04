@@ -29,6 +29,10 @@
 //stop animation
 image_speed = 0.0;
 
+//create variable for determining type of npc
+// 0 generic; 1 quest; 2 store
+type = 0;
+
 //generic npc stuff
 message = "Undefined NPC message";
 
@@ -88,7 +92,7 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(1);
+            <string>event_user(type);
 </string>
           </argument>
         </arguments>
@@ -157,7 +161,7 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>generic npc code</string>
+            <string>Store Npc Code</string>
           </argument>
         </arguments>
       </action>
@@ -179,7 +183,7 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Quest npc code</string>
+            <string>Quest Npc Code</string>
           </argument>
         </arguments>
       </action>
@@ -210,6 +214,8 @@ if(interaction()){
         show_message(quest_message);
         //start quest once you talk to npc
         GameState.switches[? "quest_start"] = true;
+        //activate coin
+        instance_activate_object(Obj_Gold_Coin);
     }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == false)){
         show_message(quest_condition_message);
     }else if((GameState.switches[? "quest_start"] == true) &amp;&amp; (GameState.switches[? "quest_obj_obtained"] == true)&amp;&amp; (GameState.switches[? "quest_finished"] == false)){
@@ -242,7 +248,7 @@ if(interaction()){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Store Npc Code</string>
+            <string>Generic NPC Code</string>
           </argument>
         </arguments>
       </action>

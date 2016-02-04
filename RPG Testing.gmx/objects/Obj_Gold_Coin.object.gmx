@@ -28,8 +28,12 @@
             <string>//create event
 image_speed = .5;
 
-//if true image is drawn to screen
-active = false;
+//deactivate obj until quest starts
+instance_deactivate_object(id);
+phy_active = false;
+
+//create first run variable for reactivating physics
+first_run = true;
 </string>
           </argument>
         </arguments>
@@ -74,11 +78,13 @@ depth = phy_position_y * -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if the quest gets started make the quest obj active(drawn to screen)
+            <string>//when quest starts and this is reactivated turn physics back on on first run
 
-if(GameState.switches[? "quest_start"] == true){
-    active = true;
+if((GameState.switches[? "quest_start"] == true) &amp;&amp; (first_run)){
+    phy_active = true;
+    first_run = false;
 }
+
 </string>
           </argument>
         </arguments>
@@ -109,32 +115,6 @@ show_debug_message("coin obtained");
 
 //destroy instance to simulate picking up
 instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///draw quest obj once activated
-if(active){
-    draw_self();
-}
 </string>
           </argument>
         </arguments>
