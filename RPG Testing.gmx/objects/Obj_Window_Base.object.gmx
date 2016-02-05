@@ -65,6 +65,29 @@ if(start == true){
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize current text
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -205,11 +228,29 @@ finished = true;
           <argument>
             <kind>1</kind>
             <string>///destroy when space is pressed and text is done being displayed or skip text
-if(finished == true){
-    //unpause game when they decise to leave message box
-    Scr_Unpause();
-    
-    instance_destroy();
+if(finished == true)
+{
+    if(ds_queue_empty(queue))
+    {
+        //unpause game when they decise to leave message box
+        Scr_Unpause();
+        
+        instance_destroy();
+    }
+    else
+    {
+        finished = false;
+        print = "";
+        time = 0;
+        
+        args = ds_queue_dequeue(queue);
+        
+        text = args[0];
+        spd = args[1];
+        font = args[2];
+        
+        event_user(1);
+    }
 }
 else
 {

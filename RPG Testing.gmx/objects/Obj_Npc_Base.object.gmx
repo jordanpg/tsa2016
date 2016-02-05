@@ -32,7 +32,7 @@ image_speed = 0.0;
 //create variable for determining type of npc
 // 0 generic; 1 quest; 2 store
 type = 0;
-end_message = "#Press space to continue..."
+end_message = ""; //"#Press space to continue..."
 
 //generic npc stuff
 message = "Undefined NPC message";

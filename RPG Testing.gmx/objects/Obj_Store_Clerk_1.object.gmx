@@ -31,7 +31,8 @@ event_inherited();
 //specify quest npc
 type = 1;
 
-quest_message = "I seem to have missplace my gold coin somewhere. Can you help mme find it?";
+quest_message = "I seem to have misplaced my gold coin somewhere. Can you help me find it?";
+quest_message2 = "I swear it's around here somewhere. It's so small and inconspicuous that it's nearly impossible to find!";
 quest_condition_message = "Have you found it yet?";
 quest_complete_message = "Thank you so much for finding my coin!!!";
 has_quest = true;
