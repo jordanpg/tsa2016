@@ -1,3 +1,8 @@
+global.pause = true;
+
+physics_pause_enable(true);
+
+/*
 with(Obj_AI_Base){
     phy_active = false;
 }
@@ -10,3 +15,4 @@ with(Obj_Npc_Base){
 with(Obj_Sword_Slash){
     phy_active = false;
 }
+*/

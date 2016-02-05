@@ -40,6 +40,8 @@ mv_x = 0;
 mv_y = 0;
 
 runForce = 50;
+
+__speed = -1;
 </string>
           </argument>
         </arguments>
@@ -142,6 +144,30 @@ moving = (point_distance(0, 0, mv_x, mv_y) &gt; 0);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Exit if game is paused
+
+if(global.pause)
+    exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Pre-step checks (death)
 
 if(hp &lt;= 0)
@@ -155,6 +181,30 @@ if(hp &lt;= 0)
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Exit if game is paused
+
+if(global.pause)
+    exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -251,9 +301,8 @@ if(moving)
             <kind>1</kind>
             <string>///do a slash move
 
-if(!mouse_check_button_pressed(mb_left))
-    exit;
-
+if(mouse_check_button_pressed(mb_left))
+{
 /*var ang = darctan2(mouse_y - y, mouse_x - x);
 
 with(instance_create(x, y - 12, Obj_Sword_Slash))
@@ -264,6 +313,7 @@ with(instance_create(x, y - 12, Obj_Sword_Slash))
 */
 
 execAttack(id, mouse_x, mouse_y, Obj_Sword_Slash);
+}
 </string>
           </argument>
         </arguments>
@@ -312,6 +362,7 @@ execAttack(id, mouse_x, mouse_y, Obj_Sword_Slash);
 
 draw_self();
 
+/*
 //npc radious of effect
 radious = 26;
 
@@ -321,6 +372,7 @@ draw_set_color(c_black);
 
 //debug circle
 draw_circle(x, y-12, radious, 3);
+*/
 </string>
           </argument>
         </arguments>

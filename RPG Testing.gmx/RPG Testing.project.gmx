@@ -142,6 +142,7 @@
       <script>scripts\initMaps.gml</script>
       <script>scripts\initOwnMap.gml</script>
       <script>scripts\initSounds.gml</script>
+      <script>scripts\initGlobals.gml</script>
     </scripts>
     <scripts name="combat">
       <script>scripts\spawnHitnumber.gml</script>
@@ -186,6 +187,7 @@
       </objects>
       <objects name="Helper">
         <object>objects\Obj_col</object>
+        <object>objects\Obj_Entity_Base</object>
       </objects>
     </objects>
     <objects name="Party">

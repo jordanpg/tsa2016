@@ -71,6 +71,30 @@ phy_fixed_rotation = true;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Exit if game is paused
+
+if(global.pause)
+    exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Depth Correction
 depth = phy_position_y * -1;
 </string>
@@ -260,7 +284,7 @@ draw_self();
 
 //debug part for area interaction circle
 
-
+/*
 //npc radious of effect
 radious = 26;
 
@@ -270,7 +294,7 @@ draw_set_color(c_black);
 
 //debug circle
 draw_circle(x, y-12, radious, 3);
-
+*/
 </string>
           </argument>
         </arguments>
